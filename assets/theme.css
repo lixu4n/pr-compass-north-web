@@ -1,0 +1,85 @@
+:root { color-scheme: light; }
+.theme-toggle {
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-width:82px;min-height:42px;padding:10px 12px;border:1px solid var(--line);
+  border-radius:999px;background:#edf4fd;color:var(--ink);font-size:11px;
+  flex-shrink:0;
+}
+.theme-toggle:hover { border-color:#80a8d8;background:#dceaff; }
+.theme-toggle svg { width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round; }
+.theme-toggle .moon { display:none; }
+html[data-theme="dark"] {
+  color-scheme:dark;
+  --paper:#0d2038;--ink:#eaf3ff;--muted:#b0c3dc;--line:#2b4361;--blue:#8abaff;--ice:#1c3554;
+}
+html[data-theme="dark"] body {
+  background-color:#08172b;
+  background-image:
+    linear-gradient(to right,#8abaff0b 1px,transparent 1px),
+    linear-gradient(to bottom,#8abaff0b 1px,transparent 1px),
+    linear-gradient(to right,#8abaff07 1px,transparent 1px),
+    linear-gradient(to bottom,#8abaff07 1px,transparent 1px),
+    linear-gradient(160deg,#08172b 0%,#102743 58%,#091a30 100%);
+}
+html[data-theme="dark"] .theme-toggle { background:#193350;border-color:#3c5778; }
+html[data-theme="dark"] .theme-toggle:hover { background:#24476d;border-color:#8abaff; }
+html[data-theme="dark"] .theme-toggle .sun { display:none; }
+html[data-theme="dark"] .theme-toggle .moon { display:block; }
+html[data-theme="dark"] .navcta { border-color:#527298; }
+html[data-theme="dark"] .navlinks a[aria-current="page"] { color:#9dc5ff; }
+html[data-theme="dark"] .primary { background:#8bbdff;color:#081d39; }
+html[data-theme="dark"] .primary:hover { background:#b2d4ff; }
+html[data-theme="dark"] .hero-note a:hover,
+html[data-theme="dark"] .powered a:hover { color:#b2d4ff; }
+html[data-theme="dark"] .check,
+html[data-theme="dark"] .mini-star { color:#91bcf2; }
+html[data-theme="dark"] .art-label,
+html[data-theme="dark"] .number { color:#a2bcde; }
+html[data-theme="dark"] .example:hover,
+html[data-theme="dark"] .example[aria-pressed="true"] { background:#1a385b;border-color:#6992c1; }
+html[data-theme="dark"] .terminal { background:#10243d;border-color:#385371;box-shadow:0 14px 45px #0002; }
+html[data-theme="dark"] .terminal-head { background:#1a3659; }
+html[data-theme="dark"] .question { color:#a9ceff; }
+html[data-theme="dark"] .answer p,
+html[data-theme="dark"] .next,
+html[data-theme="dark"] .demo-foot { color:var(--muted); }
+html[data-theme="dark"] .next,
+html[data-theme="dark"] .demo-foot { border-color:var(--line); }
+html[data-theme="dark"] .source { color:#b8d7ff;border-color:#48698f;background:#193554; }
+html[data-theme="dark"] .source:hover { background:#284d77; }
+html[data-theme="dark"] pre { background:#172f4c;color:#d9e9ff; }
+html[data-theme="dark"] .resources { background:#0b1e36;border-color:#355479;box-shadow:none; }
+html[data-theme="dark"] .team-card { background:#10243d;border-color:#385371; }
+html[data-theme="dark"] .team-portrait { background-color:#1b3556;border-color:#385371; }
+html[data-theme="dark"] .portrait-two { background-color:#203e62; }
+html[data-theme="dark"] .portrait-three { background-color:#18304e; }
+html[data-theme="dark"] .team-placeholder,
+html[data-theme="dark"] .team-portrait > span,
+html[data-theme="dark"] .team-portrait small,
+html[data-theme="dark"] .image-credit { color:#acc5e5; }
+html[data-theme="dark"] .team-details .team-role { color:#9dc5ff; }
+html[data-theme="dark"] .team-socials a,
+html[data-theme="dark"] .social-pending { background:#193554;border-color:#48698f;color:#b8d7ff; }
+html[data-theme="dark"] .social-pending small { color:#a4b8d1; }
+html[data-theme="dark"] .team-socials a:hover { background:#284d77; }
+/* Keep North snowy while the compass and halo adapt to the night sky. */
+html[data-theme="dark"] #halo stop:first-child { stop-color:#28466b; }
+html[data-theme="dark"] #halo stop:last-child { stop-color:#10243b; }
+html[data-theme="dark"] .art svg [stroke="#bfd5ef"] { stroke:#426389; }
+html[data-theme="dark"] .art svg [fill="#557ca9"] { fill:#a5c8f1; }
+html[data-theme="dark"] .art svg [fill="#356fc0"],
+html[data-theme="dark"] .art svg [fill="#5a87c3"] { fill:#8abaff; }
+@media(max-width:850px) {
+  nav { gap:14px; }
+  .navlinks { gap:10px; }
+  .navlinks .navcta { padding:10px 12px; }
+}
+@media(max-width:720px) {
+  .navlinks > a:not(.navcta) { display:none; }
+}
+@media(max-width:420px) {
+  .theme-toggle { min-width:42px;width:42px;padding:10px; }
+  .theme-toggle [data-theme-label] { display:none; }
+  .navlinks .navcta { padding:10px;font-size:10px; }
+  .navcta .arrow { margin-left:4px; }
+}

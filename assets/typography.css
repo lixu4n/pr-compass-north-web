@@ -1,0 +1,62 @@
+/* Shared type system for the homepage and team page. */
+:root {
+  --font-display: 'Bricolage Grotesque', 'Avenir Next', sans-serif;
+  --font-body: 'Manrope', 'Avenir Next', Arial, sans-serif;
+  --font-code: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+}
+body { font-family: var(--font-body); }
+button, input { font-family: inherit; }
+h1, h2, h3, .brand, .resource-card strong {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+.brand { font-size: 29px; font-weight: 700; letter-spacing: -1.4px; }
+h1 {
+  font-size: clamp(48px, 5.4vw, 74px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -.055em;
+}
+h1 em {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 700;
+  color: #5258f1;
+}
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  h1 em {
+    display: inline-block;
+    background-image: linear-gradient(112deg, #2864f0 0%, #5258f1 55%, #9665ec 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+@media (forced-colors: active) {
+  h1 em { background: none; color: CanvasText; -webkit-text-fill-color: CanvasText; }
+}
+h2 { font-weight: 600; letter-spacing: -.04em; }
+.principle h3 { font-weight: 600; font-size: 19px; letter-spacing: -.025em; }
+.team-details h3 { font-size: 24px; font-weight: 600; letter-spacing: -.035em; }
+.resource-card strong { font-size: 16px; font-weight: 600; letter-spacing: -.015em; }
+.intro { font-size: 15px; line-height: 1.8; }
+.navlinks, .primary, .example { font-weight: 500; }
+.eyebrow, .hero-note, .art-label, .terminal-head, .source, .number,
+.resource-note, .team-placeholder, .team-portrait > span, .team-portrait small,
+pre, code, svg text { font-family: var(--font-code); }
+.eyebrow { letter-spacing: 1.3px; }
+.art-label { letter-spacing: 1px; }
+.hero-note { line-height: 1.7; max-width: 400px; }
+.back-home { font-family: var(--font-body); }
+@media (max-width: 850px) {
+  h1 { font-size: 51px; }
+  .navlinks { gap: 14px; font-size: 11px; }
+}
+@media (max-width: 620px) {
+  h1 { font-size: clamp(42px, 10.7vw, 58px); letter-spacing: -.05em; }
+  .brand { font-size: 26px; }
+  .art-label { font-size: 7px; letter-spacing: .6px; }
+}
+
+.intro strong { display: block; color: var(--ink); font-weight: 700; margin-bottom: 9px; }

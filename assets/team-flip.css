@@ -1,0 +1,21 @@
+.team-reveal-note{color:var(--muted);font-size:12px;margin:-4px 0 25px;line-height:1.7}
+.team-reveal-note span{color:#397cc5;margin-right:6px}
+.team-card.persona-card{display:flex;background:transparent;border:0;overflow:visible;perspective:1200px}
+.persona-turn{display:grid;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1);flex:1;min-width:0}
+.persona-card.is-flipped .persona-turn{transform:rotateY(180deg)}
+.persona-face{grid-area:1/1;min-width:0;display:flex;flex-direction:column;border:1px solid #ccddef;border-radius:10px;overflow:hidden;background:#fafcff;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.persona-back{transform:rotateY(180deg)}
+.persona-front .team-portrait{background-color:#dceaff;background-image:radial-gradient(ellipse at 65% 25%,#aeaffb40,transparent 65%),linear-gradient(#5884ba12 1px,transparent 1px),linear-gradient(90deg,#5884ba12 1px,transparent 1px);background-size:auto,24px 24px,24px 24px}
+.persona-front .team-portrait .persona-initial{position:static;display:grid;place-items:center;width:96px;height:96px;border:1px solid #9fb6e3;border-radius:26px;background:#f3f7ffc9;color:#486ad0;font-family:var(--font-display);font-size:62px;font-weight:600;letter-spacing:-4px;box-shadow:0 8px 25px #486ad015}
+.persona-front .team-role{color:#486ad0}
+.persona-front .team-bio{max-width:230px}
+.persona-tag{font:10px var(--font-code);color:#657d9a;padding-top:12px;border-top:1px solid var(--line);margin-top:auto}
+.flip-control{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:6px;color:var(--ink);background:var(--paper);padding:10px 13px;margin-top:12px;font-size:11px;min-height:40px}
+.flip-control:hover{background:#dceaff;border-color:#93b7e4}
+html[data-theme="dark"] .persona-face{background:#10243d;border-color:#385371}
+html[data-theme="dark"] .persona-front .team-portrait{background-color:#1b3556}
+html[data-theme="dark"] .persona-front .team-portrait .persona-initial{color:#b7caff;background:#203c65;border-color:#6080b3}
+html[data-theme="dark"] .persona-front .team-role,html[data-theme="dark"] .team-reveal-note span{color:#b1c5ff}
+html[data-theme="dark"] .persona-tag{color:#a4b8d1}
+html[data-theme="dark"] .flip-control:hover{background:#284d77}
+@media(prefers-reduced-motion:reduce){.persona-turn{transition:none}}

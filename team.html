@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f8ff">
+  <script src="assets/theme.js"></script>
+
+  <title>Meet the team — Compass</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --paper: #f3f8ff;
+      --ink: #102b50;
+      --muted: #526b89;
+      --line: #d5e3f3;
+      --blue: #2469cc;
+      --ice: #e5effc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #3479d0;
+      outline-offset: 5px;
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+
+    .wrap {
+      width: min(1200px, calc(100% - 80px));
+      margin: auto;
+    }
+
+    nav {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: 750;
+      letter-spacing: -1.2px;
+    }
+
+    .brand svg {
+      width: 33px;
+      height: 33px;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+    }
+
+    .navlinks a:hover {
+      text-decoration: underline;
+    }
+
+    .navlinks .navcta {
+      border: 1px solid #b8cce5;
+      border-radius: 6px;
+      padding: 12px 17px;
+    }
+
+    .arrow {
+      margin-left: 15px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      min-height: 570px;
+      gap: 30px;
+      padding: 54px 0 38px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      font-family: monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background: #4289e3;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(48px, 5.7vw, 78px);
+      line-height: 1.04;
+      letter-spacing: -4px;
+      font-weight: 500;
+      margin: 27px 0 22px;
+    }
+
+    h1 em {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      color: #397cc5;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    .intro {
+      max-width: 380px;
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 28px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 23px;
+      align-items: center;
+    }
+
+    .primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 20px;
+      background: var(--ink);
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      font-size: 13px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .primary:hover {
+      background: #204b83;
+      transform: translateY(-2px);
+    }
+
+    .textlink {
+      font-size: 12px;
+      text-underline-offset: 5px;
+    }
+
+    .hero-note {
+      font-family: monospace;
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 22px;
+    }
+
+    .art {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .art svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .art-label {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-family: monospace;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      color: #5c7b9e;
+    }
+
+    .strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 23px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+    }
+
+    .strip .powered {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .powered strong {
+      color: var(--ink);
+      font-size: 14px;
+      margin-left: 9px;
+    }
+
+    .strip-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .check {
+      color: #397cc5;
+      font-size: 17px;
+    }
+
+    .demo {
+      padding: 72px 0 64px;
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 78px;
+      align-items: start;
+    }
+
+    h2 {
+      font-size: 36px;
+      line-height: 1.15;
+      letter-spacing: -1.6px;
+      font-weight: 500;
+      margin: 20px 0;
+    }
+
+    .demo-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 300px;
+    }
+
+    .example-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .example {
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      padding: 13px 16px;
+      text-align: left;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .example:hover,
+    .example[aria-pressed="true"] {
+      background: #e5effc;
+      border-color: #93b7e4;
+    }
+
+    .terminal {
+      border: 1px solid #ccddef;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 14px 45px #102b5010;
+    }
+
+    .terminal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #e7f0fc;
+      padding: 15px 20px;
+      font-family: monospace;
+      font-size: 10px;
+    }
+
+    .repo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .repo-icon {
+      font-size: 15px;
+    }
+
+    .sample {
+      font-size: 9px;
+      color: #55708e;
+      border: 1px solid #bdd2eb;
+      border-radius: 4px;
+      padding: 4px 6px;
+    }
+
+    .answer {
+      padding: 25px 25px 22px;
+      min-height: 295px;
+    }
+
+    .question {
+      font-size: 13px;
+      margin: 0 0 23px;
+      color: #3b618e;
+    }
+
+    .answer-title {
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .mini-star {
+      color: #4b86ca;
+    }
+
+    .answer p {
+      font-size: 12px;
+      color: #526b89;
+      line-height: 1.8;
+      margin: 12px 0 16px;
+    }
+
+    .sources {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .source {
+      padding: 7px 9px;
+      color: #315d94;
+      border: 1px solid #c7daf2;
+      border-radius: 4px;
+      background: #eff6ff;
+      font: 10px monospace;
+    }
+
+    .source:hover {
+      background: #dceaff;
+    }
+
+    .next {
+      border-top: 1px solid #e4edf8;
+      padding-top: 15px;
+      margin-top: 19px;
+      font-size: 11px;
+      color: #5b7496;
+    }
+
+    .next strong {
+      color: var(--ink);
+    }
+
+    .demo-foot {
+      padding: 13px 20px;
+      border-top: 1px solid #dce7f5;
+      font-size: 10px;
+      color: #526b89;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .principles {
+      padding: 0 0 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .principle {
+      border-top: 1px solid var(--line);
+      padding-top: 21px;
+    }
+
+    .number {
+      font: 10px monospace;
+      letter-spacing: 1px;
+      color: #637fa1;
+    }
+
+    .principle h3 {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 13px 0 9px;
+    }
+
+    .principle p {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 310px;
+      margin: 0;
+    }
+
+    .closing {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .closing .brand {
+      font-size: 17px;
+    }
+
+    .closing .brand svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .closing a {
+      text-underline-offset: 4px;
+    }
+
+    dialog {
+      width: min(640px, calc(100% - 32px));
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 26px;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    dialog::backdrop {
+      background: #071d3bd6;
+      backdrop-filter: blur(4px);
+    }
+
+    .dialoghead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .dialoghead h2 {
+      font-size: 18px;
+      letter-spacing: 0;
+      margin: 0;
+    }
+
+    .close {
+      background: none;
+      border: 1px solid var(--line);
+      padding: 8px 11px;
+      border-radius: 4px;
+      color: var(--ink);
+    }
+
+    pre {
+      overflow: auto;
+      background: #e5effc;
+      padding: 20px;
+      font-size: 12px;
+      line-height: 1.8;
+      border-radius: 6px;
+    }
+
+    dialog p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-note a,
+    .powered a {
+      text-decoration: none;
+      border-bottom: 1px solid #aecbec;
+      padding-bottom: 2px;
+    }
+
+    .hero-note a:hover,
+    .powered a:hover {
+      color: #345fbb;
+    }
+
+    .resources {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 65px;
+      padding: 44px 0 65px;
+      border-top: 1px solid var(--line);
+    }
+
+    .resource-intro p {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 365px;
+    }
+
+    .resource-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .resource-card {
+      display: grid;
+      grid-template-columns: 34px 1fr 16px;
+      gap: 15px;
+      align-items: center;
+      padding: 19px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-decoration: none;
+      background: #fafcff;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .resource-card:hover {
+      background: #e7f1ff;
+      border-color: #8fb7e4;
+    }
+
+    .resource-card strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    .resource-card strong + span {
+      display: block;
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .resource-icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 7px;
+      background: #e0ecfc;
+      color: #386cae;
+      font-size: 21px;
+    }
+
+    .resource-note {
+      font-family: monospace;
+      font-size: 9px;
+      color: var(--muted);
+      margin: 2px 0 0;
+    }
+
+    /* Arctic surfaces: icy whites, clear blues, and deep navy. */
+    body {
+      background-color: #f3f8ff;
+      background-image:
+        linear-gradient(to right, rgba(63, 111, 168, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(63, 111, 168, 0.045) 1px, transparent 1px),
+        linear-gradient(to right, rgba(63, 111, 168, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(63, 111, 168, 0.035) 1px, transparent 1px),
+        linear-gradient(160deg, #f8fbff 0%, #edf5ff 58%, #f6faff 100%);
+      background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px, 100% 100%;
+      background-position: center top;
+    }
+
+    .terminal-head {
+      background: #122f56;
+      color: #e8f2ff;
+    }
+
+    .terminal-head .sample {
+      color: #c7dfff;
+      border-color: #527297;
+      background: #1c3d65;
+    }
+
+    .resources {
+      background: #102b50;
+      color: #f4f8ff;
+      border: 1px solid #1b406c;
+      border-radius: 16px;
+      padding: 38px;
+      margin-bottom: 54px;
+      gap: 45px;
+      box-shadow: 0 16px 40px #102b500a;
+    }
+
+    .resource-intro .eyebrow {
+      color: #99caff;
+    }
+
+    .resource-intro p {
+      color: #c0d2e8;
+    }
+
+    .resource-card {
+      background: #193a62;
+      border-color: #35577f;
+      color: #f4f8ff;
+    }
+
+    .resource-card:hover {
+      background: #234976;
+      border-color: #74a8df;
+    }
+
+    .resource-card strong + span {
+      color: #c0d2e8;
+    }
+
+    .resource-icon {
+      background: #294e7c;
+      color: #aed4ff;
+    }
+
+    .resource-note {
+      color: #b2cbe9;
+    }
+
+    .team {
+      padding: 42px 0 64px;
+      border-top: 1px solid var(--line);
+    }
+
+    .team-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 26px;
+    }
+
+    .team-heading h2 {
+      margin-bottom: 0;
+    }
+
+    .team-heading > p {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 270px;
+      margin: 0 0 3px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .team-card {
+      overflow: hidden;
+      border: 1px solid #ccddef;
+      border-radius: 10px;
+      background: #fafcff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-portrait {
+      height: 220px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      background-color: #e7f0fc;
+      background-image:
+        linear-gradient(#5884ba0c 1px, transparent 1px),
+        linear-gradient(90deg, #5884ba0c 1px, transparent 1px);
+      background-size: 24px 24px;
+      border-bottom: 1px solid #d5e3f3;
+    }
+
+    .portrait-two {
+      background-color: #dceafa;
+    }
+
+    .portrait-three {
+      background-color: #edf4fc;
+    }
+
+    .team-portrait svg {
+      width: 90px;
+      height: 90px;
+      fill: #f6faff;
+      stroke: #8cafd7;
+      stroke-width: 1.3;
+    }
+
+    .team-portrait > span {
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      font: 10px monospace;
+      color: #567da8;
+      letter-spacing: 1px;
+    }
+
+    .team-portrait small {
+      position: absolute;
+      bottom: 17px;
+      font: 9px monospace;
+      letter-spacing: 1.3px;
+      color: #607a9d;
+    }
+
+    .team-portrait img {
+      width: 150px;
+      height: 190px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .team-details {
+      padding: 23px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .team-placeholder {
+      font: 9px monospace;
+      letter-spacing: 1.2px;
+      color: #607a9d;
+    }
+
+    .team-details h3 {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.4px;
+      margin: 12px 0 7px;
+    }
+
+    .team-details p {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .team-details .team-role {
+      font-size: 12px;
+      color: #37689f;
+      min-height: 38px;
+    }
+
+    .team-details .team-bio {
+      margin: 13px 0 22px;
+      line-height: 1.7;
+      min-height: 62px;
+    }
+
+    .team-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .team-socials a,
+    .social-pending {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #c7daf2;
+      border-radius: 5px;
+      padding: 9px 11px;
+      font-size: 11px;
+      text-decoration: none;
+      color: #315d94;
+      background: #eff6ff;
+    }
+
+    .team-socials a:hover {
+      background: #dceaff;
+      border-color: #93b7e4;
+    }
+
+    .social-pending {
+      color: #627c9d;
+      background: #f6f9fd;
+      border-style: dashed;
+    }
+
+    .social-pending small {
+      font-size: 8px;
+      color: #657d9a;
+    }
+
+    .image-credit {
+      font-size: 9px;
+      color: #607a9d;
+      text-underline-offset: 3px;
+      margin-top: 15px;
+    }
+
+    .team-page {
+      min-height: calc(100vh - 190px);
+      padding-top: 48px;
+    }
+
+    .team-page .team {
+      border-top: 0;
+      padding-top: 32px;
+    }
+
+    .back-home {
+      font: 12px Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .back-home:hover {
+      text-decoration: underline;
+    }
+
+    .navlinks a[aria-current="page"] {
+      color: #2469cc;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+
+    @media (min-width: 1400px) {
+      .hero {
+        min-height: 620px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .wrap {
+        width: calc(100% - 40px);
+      }
+
+      .hero {
+        gap: 0;
+        min-height: 500px;
+      }
+
+      h1 {
+        font-size: 53px;
+        letter-spacing: -2.7px;
+      }
+
+      .navlinks {
+        gap: 15px;
+        font-size: 11px;
+      }
+
+      .demo {
+        gap: 30px;
+        grid-template-columns: 0.8fr 1.2fr;
+      }
+
+      .art-label {
+        font-size: 7px;
+      }
+
+      .strip {
+        gap: 14px;
+        font-size: 10px;
+      }
+
+      .powered strong {
+        font-size: 12px;
+      }
+
+      .principles {
+        gap: 20px;
+      }
+
+      .resources {
+        gap: 25px;
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      nav {
+        height: 78px;
+      }
+
+      .navlinks > a:not(.navcta) {
+        display: none;
+      }
+
+      .navlinks .navcta {
+        font-size: 11px;
+        padding: 10px;
+      }
+
+      .brand {
+        font-size: 23px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 42px;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 57px;
+        margin-top: 22px;
+      }
+
+      .intro {
+        max-width: 340px;
+      }
+
+      .art {
+        max-width: 400px;
+        margin: -5px auto 10px;
+        width: 100%;
+      }
+
+      .strip {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 19px;
+      }
+
+      .strip .powered {
+        font-size: 9px;
+      }
+
+      .powered strong {
+        margin-left: 4px;
+      }
+
+      .demo {
+        grid-template-columns: 1fr;
+        padding-top: 46px;
+        gap: 26px;
+      }
+
+      .demo-copy p {
+        max-width: none;
+      }
+
+      .example-list {
+        gap: 8px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-bottom: 38px;
+      }
+
+      .principle p {
+        max-width: none;
+      }
+
+      .closing {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .closing > span {
+        font-size: 10px;
+      }
+
+      .answer {
+        padding: 22px;
+        min-height: 285px;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+      }
+
+      .hero-note {
+        font-size: 9px;
+      }
+
+      .resources {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 25px 20px;
+        margin-bottom: 36px;
+      }
+
+      .resource-intro p {
+        max-width: none;
+      }
+
+      .resource-card {
+        padding: 14px;
+        gap: 10px;
+      }
+
+      .team {
+        padding: 32px 0 40px;
+      }
+
+      .team-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .team-heading > p {
+        max-width: none;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .team-portrait {
+        height: 210px;
+      }
+
+      .team-details .team-role,
+      .team-details .team-bio {
+        min-height: 0;
+      }
+
+      .team-page {
+        padding-top: 30px;
+      }
+
+      .team-page .team {
+        padding-top: 28px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="assets/typography.css">
+  <link rel="stylesheet" href="assets/theme.css">
+  <link rel="stylesheet" href="assets/team-flip.css">
+  <script src="assets/team-flip.js" defer></script>
+
+  <link rel="stylesheet" href="assets/snow.css">
+  <script src="assets/snow.js" defer></script>
+
+  <link rel="stylesheet" href="assets/cursor-glow.css">
+  <script src="assets/cursor-glow.js" defer></script>
+</head>
+
+<body>
+  <svg
+    width="0"
+    height="0"
+    aria-hidden="true"
+    style="position:absolute"
+  >
+    <defs>
+      <symbol id="compass-mark" viewBox="0 0 40 40">
+        <circle
+          cx="20"
+          cy="20"
+          r="17"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        />
+        <path d="M25 10 22 23 12 29l5-14z" fill="currentColor"/>
+        <path d="m25 10-8 5 5 8z" fill="#85b7ef"/>
+        <circle cx="20" cy="20" r="2" fill="#f3f8ff"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Compass home">
+        <svg aria-hidden="true">
+          <use href="#compass-mark"></use>
+        </svg>
+        compass
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html#workflow">Workflow</a>
+        <a href="team.html" aria-current="page">The team</a>
+        <a href="index.html#resources">IBM Bob resources</a>
+
+        <a class="navcta" href="index.html#how-it-works">
+          Explore the demo
+          <span class="arrow">↗</span>
+        </a>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Dark mode"
+          aria-pressed="false"
+          title="Switch to dark mode"
+        >
+          <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"
+            />
+          </svg>
+
+          <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/>
+          </svg>
+
+          <span data-theme-label>Light</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="team-page">
+      <a class="back-home" href="index.html">← Back to Compass</a>
+
+      <section class="team" id="team" aria-labelledby="team-title">
+        <div class="team-heading">
+          <div>
+            <div class="eyebrow">02 / The people behind Compass</div>
+            <h2 id="team-title">Meet the team.</h2>
+          </div>
+
+          <p>
+            Helping engineers find context faster, before the PR review.
+          </p>
+        </div>
+
+        <p class="team-reveal-note">
+          <span aria-hidden="true">↻</span>
+          Meet our personas first. Hover over a card, or select “Meet the person,”
+          to discover who’s behind it.
+        </p>
+
+        <div class="team-grid">
+
+          <!-- Jake / Celeste -->
+          <article
+            class="team-card persona-card"
+            data-persona-card
+            data-persona="Jake"
+          >
+            <div class="persona-turn" id="persona-jake">
+
+              <div class="persona-face persona-front">
+                <div
+                  class="team-portrait portrait-one"
+                  aria-hidden="true"
+                >
+                  <span>01</span>
+                  <span class="persona-initial">J</span>
+                  <small>MEET THE PERSONA</small>
+                </div>
+
+                <div class="team-details">
+                  <span class="team-placeholder">A COMPASS PERSONA</span>
+                  <h3>Jake</h3>
+
+                  <p class="team-role">
+                    The persona
+                  </p>
+
+                  <p class="team-bio">
+                    Every persona has a person behind it. Flip the card to meet mine.
+                  </p>
+
+                  <div class="persona-tag">
+                    One persona. One real perspective.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="persona-face persona-back"
+                aria-hidden="true"
+                inert
+              >
+                <div
+                  class="team-portrait portrait-one"
+                  role="img"
+                  aria-label="Photo placeholder for Celeste"
+                >
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle cx="50" cy="36" r="15"></circle>
+                    <path d="M21 85v-6a29 29 0 0 1 58 0v6"></path>
+                  </svg>
+
+                  <span>01</span>
+                  <small>PHOTO TO COME</small>
+                </div>
+
+                <div class="team-details">
+                  <span class="team-placeholder">
+                    THE PERSON BEHIND JAKE
+                  </span>
+
+                  <h3>Celeste</h3>
+
+                  <p class="team-role">
+                    Computer science &amp; digital arts graduate
+                  </p>
+
+                  <p class="team-bio">
+                    Hi, my name is Celeste. Recent computer science and digital
+                    arts grad working in tech. Interested in building products
+                    that solve real problems and making a meaningful impact
+                    along the way.
+                  </p>
+
+                  <div
+                    class="team-socials"
+                    aria-label="Social profiles for Celeste"
+                  >
+                    <a
+                      href="https://www.linkedin.com/in/celesteduguay/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn ↗
+                    </a>
+
+                    <a
+                      href="https://github.com/lixu4n"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="flip-control"
+              aria-controls="persona-jake"
+              aria-label="Meet the person behind Jake"
+            >
+              <span aria-hidden="true">↻</span>
+              <span data-flip-label>Meet the person</span>
+            </button>
+          </article>
+
+          <!-- Elijah / Eunice -->
+          <article
+            class="team-card persona-card"
+            data-persona-card
+            data-persona="Elijah"
+          >
+            <div class="persona-turn" id="persona-elijah">
+
+              <div class="persona-face persona-front">
+                <div
+                  class="team-portrait portrait-two"
+                  aria-hidden="true"
+                >
+                  <span>02</span>
+                  <span class="persona-initial">E</span>
+                  <small>MEET THE PERSONA</small>
+                </div>
+
+                <div class="team-details">
+                  <span class="team-placeholder">A COMPASS PERSONA</span>
+                  <h3>Elijah</h3>
+
+                  <p class="team-role">
+                    The persona
+                  </p>
+
+                  <p class="team-bio">
+                    Every persona has a person behind it. Flip the card to meet mine.
+                  </p>
+
+                  <div class="persona-tag">
+                    One persona. One real perspective.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="persona-face persona-back"
+                aria-hidden="true"
+                inert
+              >
+                <div
+                  class="team-portrait portrait-two"
+                  role="img"
+                  aria-label="Photo placeholder for Eunice"
+                >
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle cx="50" cy="36" r="15"></circle>
+                    <path d="M21 85v-6a29 29 0 0 1 58 0v6"></path>
+                  </svg>
+
+                  <span>02</span>
+                  <small>PHOTO TO COME</small>
+                </div>
+
+                <div class="team-details">
+                  <span class="team-placeholder">
+                    THE PERSON BEHIND ELIJAH
+                  </span>
+
+                  <h3>Eunice</h3>
+
+                  <p class="team-role">
+                    Economics graduate
+                  </p>
+
+                  <p class="team-bio">
+                    Hi, my name is Eunice. Recent economics grad dabbling in
+                    the coding world. Interested in fintech, technology, and
+                    building things that make a meaningful impact.
+                  </p>
+
+                  <div
+                    class="team-socials"
+                    aria-label="Social profiles for Eunice"
+                  >
+                    <a
+                      href="https://www.linkedin.com/in/eunicepark28/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn ↗
+                    </a>
+
+                    <a
+                      href="https://github.com/eparrk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="flip-control"
+              aria-controls="persona-elijah"
+              aria-label="Meet the person behind Elijah"
+            >
+              <span aria-hidden="true">↻</span>
+              <span data-flip-label>Meet the person</span>
+            </button>
+          </article>
+
+          <!-- IBM Bob -->
+          <article class="team-card">
+            <div class="team-portrait portrait-three">
+              <img
+                src="assets/ibm-bob.webp"
+                alt="IBM Bob robot mascot wearing a blue-purple hard hat"
+                width="160"
+                height="180"
+              >
+              <span aria-hidden="true">03</span>
+            </div>
+
+            <div class="team-details">
+              <span class="team-placeholder">
+                OUR AI DEVELOPMENT PARTNER
+              </span>
+
+              <h3>IBM Bob</h3>
+
+              <p class="team-role">
+                AI-powered development partner · IBM
+              </p>
+
+              <p class="team-bio">
+                Helps the Compass team understand code, explore ideas,
+                and build software with context.
+              </p>
+
+              <div
+                class="team-socials"
+                aria-label="IBM Bob resources"
+              >
+                <a
+                  href="https://www.linkedin.com/company/110160527"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn ↗
+                </a>
+
+                <a
+                  href="https://bob.ibm.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Meet Bob ↗
+                </a>
+              </div>
+
+              <a
+                class="image-credit"
+                href="https://bob.ibm.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Mascot image: IBM Bob
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="closing">
+      <a class="brand" href="index.html">
+        <svg aria-hidden="true">
+          <use href="#compass-mark"></use>
+        </svg>
+        compass
+      </a>
+
+      <span>
+        Less time searching. More time reviewing.
+      </span>
+
+      <a href="index.html#how-it-works">
+        Find your north ↗
+      </a>
+    </footer>
+  </div>
+</body>
+</html>
